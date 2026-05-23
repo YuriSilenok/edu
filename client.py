@@ -5,6 +5,10 @@ import inspect
 url = 'http://127.0.0.1:8000/game/'
 
 def bot1(field):
+    for ship in field.ships:
+        for point in ship.points:
+            if not point.is_destruction:
+                return point.row, point.col
     import random
     return random.randint(1, 9), random.randint(1, 9)
 
